@@ -14,11 +14,11 @@ import "react-circular-progressbar/dist/styles.css";
 
 import './SubDashboard.css'
 
-import AddExpenseModal from '../components/AddExpenseModal';
-import AddBudgetModal from '../components/AddBudgetModal';
+import AddExpenseModal from '../components/AddExpenseModal.tsx';
+import AddBudgetModal from '../components/AddBudgetModal.tsx';
 
 // importing context hook to use the context
-import { useActiveBudgetContext } from '../context/DashboardContext';
+import { useActiveBudgetContext } from '../context/DashboardContext.ts';
 
 interface budgetsModel {
     UUID: string,
@@ -194,13 +194,13 @@ const SubDashboard = () => {
     return (
         <div id='sub-dashboard'>
 
-            <button id="clear-data-btn" onClick={()=>{
-                    const isConfirm = window.confirm("Are you sure? All the data will be lost!");
-                    if(isConfirm){
-                        localStorage.clear();
-                        window.location.reload();
-                    }
-                }}><DeleteIcon size={16} color='tomato'/>Clear all Data</button>
+            <button id="clear-data-btn" onClick={() => {
+                const isConfirm = window.confirm("Are you sure? All the data will be lost!");
+                if (isConfirm) {
+                    localStorage.clear();
+                    window.location.reload();
+                }
+            }}><DeleteIcon size={16} color='tomato' />Clear all Data</button>
 
             <div id='sub-dashboard-left'>
                 <div id='title'>
@@ -214,7 +214,7 @@ const SubDashboard = () => {
                     <button id='next' onClick={handleNext}><RightArrow size={16} color='4d69ff' strokeWidth={1} /></button>
                 </div>
 
-                <span style={{color: 'gray', fontSize: '12px'}}>Add a balance if it’s missing, or update it if your monthly income or limit has changed.</span>
+                <span style={{ color: 'gray', fontSize: '12px' }}>Add a balance if it’s missing, or update it if your monthly income or limit has changed.</span>
 
                 <button id='add-balance'
                     onClick={() => {
@@ -257,11 +257,11 @@ const SubDashboard = () => {
                     </div>
                     <div id="balance-spent">
                         <span>Spent</span>
-                        <span style={{color: 'tomato'}}>&#8377; {balanceSpent}</span>
+                        <span style={{ color: 'tomato' }}>&#8377; {balanceSpent}</span>
                     </div>
                     <div id="balance-available">
                         <span>Available</span>
-                        <span style={{color: (balance - balanceSpent) < 0 ? 'tomato': (balance - balanceSpent) >= 1000 ? 'palegreen': 'black'}}>&#8377; {balance - balanceSpent}</span>
+                        <span style={{ color: (balance - balanceSpent) < 0 ? 'tomato' : (balance - balanceSpent) >= 1000 ? 'palegreen' : 'black' }}>&#8377; {balance - balanceSpent}</span>
                     </div>
                 </div>
 

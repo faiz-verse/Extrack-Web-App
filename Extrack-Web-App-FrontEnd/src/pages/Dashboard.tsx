@@ -20,13 +20,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./Dashboard.css";
 
 // importing sub pages (views)
-import SubDashboard from "./SubDashboard";
-import Reports from "./Reports";
-import Budgets from "./Budgets";
-import History from "./History";
+import SubDashboard from "./SubDashboard.tsx";
+import Reports from "./Reports.tsx";
+import Budgets from "./Budgets.tsx";
+import History from "./History.tsx";
 
 // for dashboard context
-import { activeBudgetContext } from "../context/DashboardContext";
+import { activeBudgetContext } from "../context/DashboardContext.ts";
 
 const Dashboard = () => {
 
@@ -67,10 +67,11 @@ const Dashboard = () => {
     return (
         <activeBudgetContext.Provider value={{ activeBudget, setActiveBudget }}>
             <div id="Dashboard">
-                <div id="side-menu" style={{left: screenSize < 768 ? isSidebarActive? '0%': '-85%' : '20px',
-                    boxShadow: screenSize < 768 ? isSidebarActive? `0px 0px 100px rgba(0, 0, 0, 0.3)`: 'none' : 'none'
+                <div id="side-menu" style={{
+                    left: screenSize < 768 ? isSidebarActive ? '0%' : '-85%' : '20px',
+                    boxShadow: screenSize < 768 ? isSidebarActive ? `0px 0px 100px rgba(0, 0, 0, 0.3)` : 'none' : 'none'
                 }}>
-                    {screenSize < 768 && <button onClick={()=> {setIsSidebarActive(!isSidebarActive)}}>
+                    {screenSize < 768 && <button onClick={() => { setIsSidebarActive(!isSidebarActive) }}>
                         {!isSidebarActive ? <SidebarIcon
                             className="side-bar-icon"
                             size={25}
@@ -81,10 +82,10 @@ const Dashboard = () => {
                             size={25}
                             strokeWidth={0.5}
                             color="#4d69ff"
-                            style={{rotate: '45deg'}}
+                            style={{ rotate: '45deg' }}
                         ></PlusIcon>}
                     </button>}
-                    <div id="side-menu-title" onClick={()=> navigate('/')}>ExTrack</div>
+                    <div id="side-menu-title" onClick={() => navigate('/')}>ExTrack</div>
                     <div id="menu-options">
                         <div
                             className="menu-option"

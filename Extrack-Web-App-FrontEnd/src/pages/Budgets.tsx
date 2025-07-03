@@ -4,11 +4,11 @@ import { BsChevronLeft, BsChevronRight, BsPlusLg, BsPencilSquare, BsTrash3Fill, 
 
 import './Budgets.css'
 
-import AddBudgetModal from '../components/AddBudgetModal';
-import AddExpenseModal from '../components/AddExpenseModal';
+import AddBudgetModal from '../components/AddBudgetModal.tsx';
+import AddExpenseModal from '../components/AddExpenseModal.tsx';
 
 // importing context hook to use the context
-import { useActiveBudgetContext } from '../context/DashboardContext';
+import { useActiveBudgetContext } from '../context/DashboardContext.ts';
 
 interface budgetsModel {
     UUID: string,
