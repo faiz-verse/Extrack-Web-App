@@ -1,0 +1,161 @@
+#Dashboard {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    user-select: none;
+}
+
+#side-menu {
+    height: calc(100vh - 40px);
+    width: 250px;
+    background: #e7eaff;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+#side-menu-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#menu-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-top: 50px;
+
+    font-size: 14px;
+}
+
+#menu-options .menu-option {
+    padding: 3px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-option .menu-option-icon {
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#menu-footer {
+    font-size: 18px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 30px;
+
+    display: flex;
+    align-items: center;
+}
+
+#menu-footer .back-icon {
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#View {
+    height: calc(100vh - 40px);
+    width: calc(100vw - 300px);
+    margin-left: 270px;
+}
+
+#side-menu button {
+    all: unset;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: -35px;
+}
+
+/* Extra Small Devices (phones < 375px) */
+@media (max-width: 374px) {
+    #Dashboard {
+        overflow-y: auto;
+    }
+
+    #side-menu {
+        height: 100vh;
+        width: calc(100vw - 45px);
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-radius: 10px;
+    }
+
+    #side-menu {
+        transition: left 0.5s ease-in-out;
+    }
+
+    #View {
+        height: calc(100vh - 40px);
+        width: 95vw;
+        margin-left: 10px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    #Dashboard {
+        overflow-y: auto;
+    }
+    #side-menu {
+        height: 100vh;
+        width: calc(100vw - 48px);
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-radius: 10px;
+    }
+
+    #side-menu {
+        transition: left 0.5s ease-in-out;
+    }
+
+    #View {
+        height: calc(100vh - 40px);
+        width: 95vw;
+        margin-left: 10px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 750px) {
+    #Dashboard {
+        overflow-y: auto;
+    }
+    #side-menu {
+        height: 100vh;
+        width: calc(100vw - 80px);
+        top: 0;
+        left: 0;
+        z-index: 100;
+        border-radius: 10px;
+    }
+
+    #side-menu {
+        transition: left 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    }
+
+    #View {
+        height: calc(100vh - 40px);
+        width: 95vw;
+        margin-left: 10px;
+    }
+}
